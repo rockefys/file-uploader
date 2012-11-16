@@ -855,13 +855,13 @@ qq.extend(qq.FileUploader.prototype, {
             qq.addClass(item, this._classes.success);
             if (this._classes.successIcon) {
                 this._find(item, 'finished').style.display = "inline-block";
-                qq.addClass(item, this._classes.successIcon)
+                qq.addClass(this._find(item, 'finished'), this._classes.successIcon)
             }
         } else {
             qq.addClass(item, this._classes.fail);
             if (this._classes.failIcon) {
                 this._find(item, 'finished').style.display = "inline-block";
-                qq.addClass(item, this._classes.failIcon)
+                qq.addClass(this._find(item, 'finished'), this._classes.failIcon)
             }
             this._controlFailureTextDisplay(item, result);
         }
